@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT 3119 Student Records Demo</title>
+</head>
+
+<body>
+    <main class="container">
+
+        <h1>Student Records</h1>
+        <p class="note">Class demo only. Use synthetic data.</p>
+
+        <!-- ACCOUNT SECTION -->
+        <section class="panel">
+            <h2>Account</h2>
+
+            <form id="auth-form">
+
+                <label>
+                    Email
+                    <input
+                        id="auth-email"
+                        type="email"
+                        required
+                    >
+                </label>
+
+                <label>
+                    Password
+                    <input
+                        id="auth-password"
+                        type="password"
+                        minlength="6"
+                        required
+                    >
+                </label>
+
+                <div class="actions">
+                    <button type="submit" id="signin-button">
+                        Sign in
+                    </button>
+
+                    <button type="button" id="signup-button">
+                        Create account
+                    </button>
+
+                    <button type="button" id="signout-button" hidden>
+                        Sign out
+                    </button>
+                </div>
+
+            </form>
+
+            <p id="auth-status" role="status"></p>
+        </section>
+
+        <!-- STUDENT RECORDS SECTION -->
+        <section class="panel" id="records-panel" hidden>
+
+            <h2>Add or Edit a Student</h2>
+
+            <form id="student-form">
+
+                <input id="student-id" type="hidden">
+
+                <label>
+                    Student Number
+                    <input
+                        id="student-no"
+                        type="text"
+                        required
+                        maxlength="30"
+                    >
+                </label>
+
+                <label>
+                    Full Name
+                    <input
+                        id="full-name"
+                        type="text"
+                        required
+                        maxlength="120"
+                    >
+                </label>
+
+                <label>
+                    Email (Optional)
+                    <input
+                        id="student-email"
+                        type="email"
+                        maxlength="160"
+                    >
+                </label>
+
+                <div class="actions">
+                    <button type="submit">
+                        Save Student
+                    </button>
+
+                    <button type="button" id="cancel-edit">
+                        Clear Form
+                    </button>
+                </div>
+
+            </form>
+
+            <p id="app-status" role="status"></p>
+
+            <h2>Your Records</h2>
+
+            <button type="button" id="refresh-button">
+                Refresh List
+            </button>
+
+            <ul id="student-list"></ul>
+
+        </section>
+
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+
+</body>
+</html>
